@@ -5,5 +5,6 @@
 # or if x is greater than the upper bound, return the upper bound.
 
 def fun_getinrange(x, bound1, bound2):
-	# your code goes here
-	return -1
+	ma=max(x,bound2,bound1)
+	mi=min(x,bound2,bound1)
+	return x+bound1+bound2-ma-mi
