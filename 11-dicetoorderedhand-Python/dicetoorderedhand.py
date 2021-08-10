@@ -11,5 +11,11 @@
 
 
 def dicetoorderedhand(a, b, c):
-	# your code goes here
-	pass
+	# return c*100+b*10+a
+	m=max(a,b,c)
+	l=min(a,b,c)
+	med=a+b+c-m-l
+	return m*100+med*10+l
+
+
+print(dicetoorderedhand(6,5,6))
