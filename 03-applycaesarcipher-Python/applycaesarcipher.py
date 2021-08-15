@@ -11,8 +11,24 @@
 
 
 def fun_applycaesarcipher(msg, shift):
-	return ""
+	out=""
+	shift=shift%26
+	for i in msg:
+		x=ord(i)
+		if x>=65 and x<=90:
+			x+=shift
+			if x>90:
+				x-=26
+		elif x>=97:
+			# print(x)
+			x+=shift
 
+			if x>122:
+				x-=26
+		out+=chr(x)
+	return out
+
+print(fun_applycaesarcipher("abcdxyz",3))
 
 
 
