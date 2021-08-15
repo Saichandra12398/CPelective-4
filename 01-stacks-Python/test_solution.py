@@ -23,7 +23,7 @@ def test_pop1(result):
 
 @pytest.mark.parametrize("result",[(None)])
 def test_pop2(result):    
-    assert stack.pop() == result
+    assert stack.pop().value == result
 
 @pytest.mark.parametrize("result",[(4)])
 def test_pop3(result):
