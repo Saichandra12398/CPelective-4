@@ -48,4 +48,5 @@ def ismostlymagicsquare(a):
 	# Your code goes here
 	pass
 
+
 print(ismostlymagicsquare([[2, 7, 6], [9, 5, 1], [4, 3, 8]]))
