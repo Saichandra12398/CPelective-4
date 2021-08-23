@@ -39,7 +39,6 @@ class LinkedList(object):
         temp=self.head
         while temp.next:
             if count==position:
-                print(count,position)
                 return temp.value
             temp=temp.next
             count+=1
@@ -89,7 +88,12 @@ e3 = Element(3)
 ll = LinkedList(e1)
 ll.append(e2)
 ll.append(e3)
-ll.insert(Element(5),4)
+# print(ll.get_position(3))
+# print(ll.get_position(2))
+e4 = Element(4)
+ll.insert(e4,3)
+# ll.get_position(position)
+# ll.insert(Element(5),4)
 temp=ll.head
 while temp.next:
     print(temp.value)
