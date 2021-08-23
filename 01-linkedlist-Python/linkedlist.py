@@ -21,22 +21,30 @@ class LinkedList(object):
         
     def append(self, new_element):
         # Your code goes here
-        temp=self.head
-        while temp.next!=None:
-            temp=temp.next
-        temp.next=new_element
+        if self.head:
+            temp=self.head
+            while temp.next:
+                temp=temp.next
+            temp.next=new_element
+        else:
+            self.head=new_element
+            
             
     def get_position(self, position):
         """Get an element from a particular position.
         Assume the first position is "1".
         Return "None" if position is not in the list."""
         # Your code goes here
-        count=0
+        count=1
         temp=self.head
-        while temp.next!=None:
+        while temp.next:
             if count==position:
+                print(count,position)
                 return temp.value
+            temp=temp.next
             count+=1
+        if count==position:
+            return temp.value
         return None
     
     def insert(self, new_element, position):
@@ -45,13 +53,14 @@ class LinkedList(object):
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
         # Your code goes here
-        count=0
+        count=1
         temp=self.head
-        while temp.next!=None:
+        while temp.next:
             if count==position-1:
-                temp1=temp
-                temp1.next=new_element
                 new_element.next=temp.next
+                temp.next=new_element
+            temp=temp.next
+            count+=1
         
 
         pass
@@ -60,7 +69,17 @@ class LinkedList(object):
     def delete(self, value):
         """Delete the first node with a given value."""
         # Your code goes here
-        pass
+        temp=self.head
+        previous=None
+        while(temp.value!=value and temp.next):
+            previous=temp
+            temp=temp.next
+        if (temp.value==value):
+            if(previous):
+                previous.next=temp.next
+            else:
+                self.head=temp.next
+
 
 
 e1 = Element(1)
@@ -70,3 +89,9 @@ e3 = Element(3)
 ll = LinkedList(e1)
 ll.append(e2)
 ll.append(e3)
+ll.insert(Element(5),4)
+temp=ll.head
+while temp.next:
+    print(temp.value)
+    temp=temp.next
+print(temp.value) 
