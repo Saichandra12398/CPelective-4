@@ -8,7 +8,18 @@
 
 
 
-
 def fun_getaverage(s): 
-	return 0.0
+    sum=0
+    count=0
+    for i in s.split(","):
+        if(i.isdigit()):
+            i=int(i)
+            sum=sum+i
+            count=count+1
 
+        
+    if(sum==0):
+        return 0.0
+    else:
+        sum=sum/count
+        return sum
