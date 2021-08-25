@@ -21,4 +21,8 @@ the function should return as follows
 
 def movie_awards(oscarResults):
     # Your code goes here...
-    pass
+    r=list(oscarResults)
+    a={}
+    for i, j in r:
+        a[j]=a.get(j,0)+1
+    return a
