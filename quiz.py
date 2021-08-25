@@ -6,8 +6,25 @@
 
 def bestQuiz(l):
     # Your  code goes ehre...
-    pass
-
+    row=len(l)
+    col=len(l[0])
+    sum=0
+    c=0
+    res=[]
+    for i in range(col):
+          sum=0
+          c=0
+          for j in range(row):
+                if(l[j][i]!=-1):
+                      sum+=l[j][i]
+                      c+=1
+          if(c!=0):
+                average=sum/c
+                res.append(average)
+    if(len(res)==0):
+          return None
+    else:
+          return res.index(max(res))
 def testBestQuiz():
     print('Testing bestQuiz()...', end='')
     a = [ [ 88,  80, 91 ],
@@ -23,3 +40,4 @@ def testBestQuiz():
           [-1, -1, -1 ]]
     assert(bestQuiz(a) == None)
     print('All test cases passed...!')
+testBestQuiz()
