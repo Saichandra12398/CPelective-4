@@ -4,5 +4,15 @@
 # (that is, 3). If L is empty, return 0. You may not use loops/iteration in this problem.
 
 
+
+def sum(l,i,a):
+    if(len(l)==i):
+        return a
+    elif(i%2==0):
+        a=a+l[i]
+        return sum(l,i+1,a)
+    else:
+        a=a-l[i]
+        return sum(l,i+1,a)
 def fun_recursions_alternatingsum(l): 
-	return 0
+    return sum(l,0,0)
