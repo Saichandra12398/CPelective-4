@@ -6,5 +6,7 @@
 # the list.
 
 def issorted(a):
-	# your code goes here
-	pass
+	# your code goes heres
+	return a==sorted(a) or a[::-1]==sorted(a)
+
+print(issorted([]))
